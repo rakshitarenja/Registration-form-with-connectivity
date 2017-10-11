@@ -7,3 +7,6 @@ session_start();
 	else
 	header("Location:Login.php");
 ?>
+<br>
+<br>
+<a href="userlogout.php">Logout from here</a>
