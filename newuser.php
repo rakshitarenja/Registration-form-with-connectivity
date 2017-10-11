@@ -47,22 +47,18 @@ Female <input type="radio" name="g" value="Female"/>
 </html>
 
 <?php
- $nu=mysqli_connect("localhost","root","","userid",3306);
-
-/*above line explains that
- localhost is the host we are going to use with the server and server can be any like wamp or xampp.
- root is the root of the site we are using with the server, in other words while you set the site in your server you need to put any name on it in other words name of website or username.
- "" written is the password that I have set with the root in accessing the files in the site on the respective server. Other than "" this if you put NULL in uppercase also works. This password can be according to your convenience.
- user id is the name of the database where you are going to save your data. Note that you have to create userid named database in mysql.
- 3306 is the port number of my computer. Find your host port number in config file of your wamp/xampp.
-*/
-
  if(isset($_POST["submit"]))
  	{
-	extract($_POST);
-// $h=implode(",",$ch1);
-
-	$a=mysqli_query($nu,"insert into emp values('$un','$email','$pwd','$city','$mob','$g','$add','$h')");
+	$un=$_POST['un'];
+	$email=$_POST['email'];
+	$pwd=$_POST['pwd'];
+	$city=$_POST['city'];
+	$mob=$_POST['mob'];
+	$g=$_POST['g'];
+	$add=$_POST['add'];
+	$h=$_POST['h'];
+include('connect.php');
+	$q=mysqli_query($nu,"insert into emp values('$un','$email','$pwd','$city','$mob','$g','$add','$h')");
 /* here $nu is the connection of a file to the database.
 we are inserting into the emp. NOTE emp is the name of the table which we have created in the database named userid.
 */
