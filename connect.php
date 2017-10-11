@@ -2,7 +2,6 @@
 $con=mysqli_connect("localhost","root","","userid",3306);
   if (!($con))
     echo ("database not connected");
-?>
 
 /*above line explains...
  localhost is the host we are going to use with the server and server can be any like wamp or xampp.
@@ -12,3 +11,5 @@ $con=mysqli_connect("localhost","root","","userid",3306);
  3306 is the port number of my computer. Find your host port number in config file of your wamp/xampp.
  !($con) shows that if you are not connected to the database it will show the output on the screen as database not connected else if connected no output regarding the connection with the database is printed.
 */
+
+?>
