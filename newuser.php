@@ -22,12 +22,11 @@
   </select></td></tr>
 
 <tr><td>Mob.No</td><td><input type="text" name="mob"/></td></tr>
-
 <tr><td>Hobby</td>
 <td>
- Play <input type="checkbox" name="ch1[]" value="Play"/><br>
- read <input type="checkbox" name="ch1[]" value="read"/><br>
- write <input type="checkbox" name="ch1[]" value="write"/><br>
+ Play <input type="checkbox" name="h[]" value="Play"/><br>
+ read <input type="checkbox" name="h[]" value="read"/><br>
+ write <input type="checkbox" name="h[]" value="write"/><br>
 </td></tr>
 
 <tr><td>Gender</td><td>
@@ -54,17 +53,24 @@ Female <input type="radio" name="g" value="Female"/>
 	$pwd=$_POST['pwd'];
 	$city=$_POST['city'];
 	$mob=$_POST['mob'];
+	$h=$_POST['h[]'];
 	$g=$_POST['g'];
 	$add=$_POST['add'];
-	$h=$_POST['h'];
+	
 include('connect.php');
-	$q=mysqli_query($nu,"insert into emp values('$un','$email','$pwd','$city','$mob','$g','$add','$h')");
+	$q=mysqli_query($con,"insert into emp values('$un','$email','$pwd','$city','$mob','$h','$g','$add')");
 /* here $nu is the connection of a file to the database.
 we are inserting into the emp. NOTE emp is the name of the table which we have created in the database named userid.
 */
-if($a>0)
+if($q>0)
 	    echo("Data Saved!");
  else
       echo("data not saved!!");
 	}
 ?>
+<html>
+<body>
+	<br><br>
+<a href="userlogin.php">Please Login From Here</a>
+</body>
+</html>
